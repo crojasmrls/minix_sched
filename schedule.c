@@ -119,7 +119,7 @@ int do_noquantum(message *m_ptr)
 			rmp->priority = MAX_USER_Q;//Se coloca el proceso en la cola de mayor prioridad
 		}	*/	
 
-		switch(quantum){
+		switch(rmp->quantum){
 			case 5:
 				printf("Process %d consumed Quantum %d and Priority %d\n", rmp->endpoint, rmp->quantum + 1 , rmp->priority);
 				if(rmp->priotity < MIN_USER_Q) rmp->priority +=1;
