@@ -223,7 +223,7 @@ int do_start_scheduling(message *m_ptr)
 	if (rmp->endpoint == rmp->parent) {
 		/* We have a special case here for init, which is the first
 		   process scheduled, and the parent of itself. */
-		rmp->priority   = USER_Q;
+		rmp->priority   = MAX_USER_Q;
 		rmp->time_slice = DEFAULT_USER_TIME_SLICE;
 
 		/*
