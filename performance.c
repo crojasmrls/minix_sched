@@ -3,6 +3,7 @@
 #include <time.h>
 #include <sys/types.h>
 #include <unistd.h>
+#include <sys/wait.h>
 
 #define IO_VALUE 10000
 #define CPU_VALUE 100
