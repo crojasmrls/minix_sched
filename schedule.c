@@ -122,27 +122,27 @@ int do_noquantum(message *m_ptr)
 		switch(rmp->quantum){
 			case 5:
 				printf("Process %d consumed Quantum %d and Priority %d\n", rmp->endpoint, rmp->quantum + 1 , rmp->priority);
-				if(rmp->priotity < MIN_USER_Q) rmp->priority +=1;
+				if(rmp->priority < MIN_USER_Q) rmp->priority +=1;
 			break;
 
 			case 15:
 				printf("Process %d consumed Quantum %d and Priority %d\n", rmp->endpoint, rmp->quantum + 1 , rmp->priority);
-				if(rmp->priotity < MIN_USER_Q) rmp->priority +=1;
+				if(rmp->priority < MIN_USER_Q) rmp->priority +=1;
 			break;
 
 			case 35:
 				printf("Process %d consumed Quantum %d and Priority %d\n", rmp->endpoint, rmp->quantum + 1 , rmp->priority);
-				if(rmp->priotity < MIN_USER_Q) rmp->priority +=1;
+				if(rmp->priority < MIN_USER_Q) rmp->priority +=1;
 			break;
 
 			case 75:
 				printf("Process %d consumed Quantum %d and Priority %d\n", rmp->endpoint, rmp->quantum + 1 , rmp->priority);
-				if(rmp->priotity < MIN_USER_Q) rmp->priority +=1;
+				if(rmp->priority < MIN_USER_Q) rmp->priority +=1;
 			break;
 
 			case 155:
 				printf("Process %d consumed Quantum %d and Priority %d\n", rmp->endpoint, rmp->quantum + 1 , rmp->priority);
-				if(rmp->priotity < MIN_USER_Q) rmp->priority = MAX_USER_Q;
+				rmp->priority = MAX_USER_Q;
 			break;
 		}
 	}
