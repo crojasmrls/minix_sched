@@ -5,8 +5,8 @@
 #include <unistd.h>
 #include <sys/wait.h>
 
-#define IO_VALUE 10000
-#define CPU_VALUE 100
+#define IO_VALUE 1000000
+#define CPU_VALUE 10000
 
 int main() {
 	time_t t[20];
