@@ -17,7 +17,7 @@
 static timer_t sched_timer;
 static unsigned balance_timeout;
 
-#define BALANCE_TIMEOUT	10 /* how often to balance queues in seconds */
+#define BALANCE_TIMEOUT	50 /* how often to balance queues in seconds */
 
 static int schedule_process(struct schedproc * rmp, unsigned flags);
 static void balance_queues(struct timer *tp);
@@ -104,7 +104,7 @@ int do_noquantum(message *m_ptr)
 	if (rmp->priority>=MAX_USER_Q && rmp->priority<=MIN_USER_Q)//User space Policy
 	{
 		rmp->quantum+=1;//increment the consumed quatums counter
-		if (rmp->quantum==5)
+/*		if (rmp->quantum==5)
 		{
 			printf("Process %d consumed Quantum 5 and Priority %d\n", rmp->endpoint, rmp->priority);
 			rmp->priority = USER_Q;//Se coloca la prioridad del proceso en la cola de enmedio
@@ -117,7 +117,34 @@ int do_noquantum(message *m_ptr)
 			printf("Process %d consumed Quantum 35 and Priority %d\n", rmp->endpoint, rmp->priority);
 			rmp->quantum = 0;//se reinicia el contador de quantums
 			rmp->priority = MAX_USER_Q;//Se coloca el proceso en la cola de mayor prioridad
-		}		
+		}	*/	
+
+		switch(quantum){
+			case 5:
+				printf("Process %d consumed Quantum %d and Priority %d\n", rmp->endpoint, rmp->quantum + 1 , rmp->priority);
+				if(rmp->priotity < MIN_USER_Q) rmp->priority +=1;
+			break;
+
+			case 15:
+				printf("Process %d consumed Quantum %d and Priority %d\n", rmp->endpoint, rmp->quantum + 1 , rmp->priority);
+				if(rmp->priotity < MIN_USER_Q) rmp->priority +=1;
+			break;
+
+			case 35:
+				printf("Process %d consumed Quantum %d and Priority %d\n", rmp->endpoint, rmp->quantum + 1 , rmp->priority);
+				if(rmp->priotity < MIN_USER_Q) rmp->priority +=1;
+			break;
+
+			case 75:
+				printf("Process %d consumed Quantum %d and Priority %d\n", rmp->endpoint, rmp->quantum + 1 , rmp->priority);
+				if(rmp->priotity < MIN_USER_Q) rmp->priority +=1;
+			break;
+
+			case 155:
+				printf("Process %d consumed Quantum %d and Priority %d\n", rmp->endpoint, rmp->quantum + 1 , rmp->priority);
+				if(rmp->priotity < MIN_USER_Q) rmp->priority = MAX_USER_Q;
+			break;
+		}
 	}
 	else if (rmp->priority < MIN_USER_Q) {//Non user space policy//Default minix policy
 		rmp->priority += 1; /* lower priority */
@@ -230,7 +257,7 @@ int do_start_scheduling(message *m_ptr)
 			return rv;
 
 		//rmp->priority = schedproc[parent_nr_n].priority;//El proceso adquiere la prioridad del proceso padre
-		rmp->priority = MAX_USER_Q;//El proceso adquiere la máxima prioridad
+		rmp->priority = MAX_USER_Q;//El proceso adquiere la máxima prioridad en el espacio de usuario
 		rmp->time_slice = schedproc[parent_nr_n].time_slice;
 		break;
 		
