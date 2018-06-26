@@ -121,27 +121,27 @@ int do_noquantum(message *m_ptr)
 
 		switch(rmp->quantum){
 			case 5:
-				printf("Process %d consumed Quantum %d and Priority %d\n", rmp->endpoint, rmp->quantum + 1 , rmp->priority);
+				printf("Process %d consumed Quantum %d and Priority %d\n", rmp->endpoint, rmp->quantum, rmp->priority);
 				if(rmp->priority < MIN_USER_Q) rmp->priority +=1;
 			break;
 
 			case 15:
-				printf("Process %d consumed Quantum %d and Priority %d\n", rmp->endpoint, rmp->quantum + 1 , rmp->priority);
+				printf("Process %d consumed Quantum %d and Priority %d\n", rmp->endpoint, rmp->quantum, rmp->priority);
 				if(rmp->priority < MIN_USER_Q) rmp->priority +=1;
 			break;
 
 			case 35:
-				printf("Process %d consumed Quantum %d and Priority %d\n", rmp->endpoint, rmp->quantum + 1 , rmp->priority);
+				printf("Process %d consumed Quantum %d and Priority %d\n", rmp->endpoint, rmp->quantum, rmp->priority);
 				if(rmp->priority < MIN_USER_Q) rmp->priority +=1;
 			break;
 
 			case 75:
-				printf("Process %d consumed Quantum %d and Priority %d\n", rmp->endpoint, rmp->quantum + 1 , rmp->priority);
+				printf("Process %d consumed Quantum %d and Priority %d\n", rmp->endpoint, rmp->quantum, rmp->priority);
 				if(rmp->priority < MIN_USER_Q) rmp->priority +=1;
 			break;
 
 			case 155:
-				printf("Process %d consumed Quantum %d and Priority %d\n", rmp->endpoint, rmp->quantum + 1 , rmp->priority);
+				printf("Process %d consumed Quantum %d and Priority %d\n", rmp->endpoint, rmp->quantum, rmp->priority);
 				rmp->priority = MAX_USER_Q;
 			break;
 		}
@@ -223,7 +223,7 @@ int do_start_scheduling(message *m_ptr)
 	if (rmp->endpoint == rmp->parent) {
 		/* We have a special case here for init, which is the first
 		   process scheduled, and the parent of itself. */
-		rmp->priority   = MAX_USER_Q;
+		rmp->priority   = USER_Q;
 		rmp->time_slice = DEFAULT_USER_TIME_SLICE;
 
 		/*
