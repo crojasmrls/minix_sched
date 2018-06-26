@@ -17,7 +17,7 @@
 static timer_t sched_timer;
 static unsigned balance_timeout;
 
-#define BALANCE_TIMEOUT	50 /* how often to balance queues in seconds */
+#define BALANCE_TIMEOUT	200 /* how often to balance queues in seconds */
 
 static int schedule_process(struct schedproc * rmp, unsigned flags);
 static void balance_queues(struct timer *tp);
