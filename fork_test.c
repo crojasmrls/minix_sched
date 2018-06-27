@@ -1,9 +1,8 @@
 #include <stdio.h>
-#include <stdint.h>
 #include <stdlib.h>
 #include <time.h>
 #include <unistd.h>
-#define cycles 1000
+#define cycles 10000
 
 int main(int argc, char const *argv[])
 {
@@ -22,7 +21,7 @@ int main(int argc, char const *argv[])
 		if (pid==0)
 		{
 			now = time(NULL);
-			printf("Procces started: pid =%d, time %s %ju \n",getpid(),asctime(localtime(&now)),(uintmax_t)now );
+			printf("Procces started: pid =%d, %s \n",getpid(),asctime(localtime(&now)) );
 			i=5;
 		}
 	}
@@ -31,7 +30,7 @@ int main(int argc, char const *argv[])
 		operations = (rand()%11)*cycles;
 		for (int i = 0; i < operations; ++i);
 		now = time(NULL);
-		printf("Procces finished: pid =%d, ops = %d, time: %s %ju \n",getpid(),operations,asctime(localtime(&now)),(uintmax_t)now );
+		printf("Procces finished: pid =%d, ops = %d, %s \n",getpid(),operations,asctime(localtime(&now)));
 	}
 
 	return 0;
