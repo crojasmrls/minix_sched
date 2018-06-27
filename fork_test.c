@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <unistd.h>
-#define cycles 10000
+#define cycles 10000000
 
 int main(int argc, char const *argv[])
 {
@@ -10,6 +10,7 @@ int main(int argc, char const *argv[])
 	int delay;
 	int pid;
 	int operations;
+	int a=0;
 
 	time_t now;
 
@@ -28,7 +29,11 @@ int main(int argc, char const *argv[])
 	if (pid==0)
 	{
 		operations = (rand()%11)*cycles;
-		for (int i = 0; i < operations; ++i);
+		for (int i = 0; i < operations; ++i);{
+			for (int j = 0; j < operations; ++j);{
+				a=a+a;
+			}
+		}
 		now = time(NULL);
 		printf("Procces finished: pid =%d, ops = %d, %s \n",getpid(),operations,asctime(localtime(&now)));
 	}
