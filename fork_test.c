@@ -11,7 +11,7 @@ int main(int argc, char const *argv[])
 	int pid;
 	int operations;
 
-	time_t time;
+	time_t now;
 
 	for (int i = 0; i < 5; ++i)
 	{
@@ -20,8 +20,8 @@ int main(int argc, char const *argv[])
 		pid=fork();
 		if (pid==0)
 		{
-			time = time(NULL)
-			printf("Procces started: pid =%d, time %s %ju \n",getpid(),asctime(localtime(&time)),(uintmax_t)time );
+			now = time(NULL);
+			printf("Procces started: pid =%d, time %s %ju \n",getpid(),asctime(localtime(&now)),(uintmax_t)now );
 			i=5;
 		}
 	}
@@ -29,8 +29,8 @@ int main(int argc, char const *argv[])
 	{
 		operations = (rand()%11)*cycles;
 		for (int i = 0; i < operations; ++i);
-		time = time(NULL)
-	printf("Procces finished: pid =%d, ops = operations, time: %s %ju \n",getpid(),asctime(localtime(&time)),(uintmax_t)time );
+		now = time(NULL);
+		printf("Procces finished: pid =%d, ops = %d, time: %s %ju \n",getpid(),operations,asctime(localtime(&now)),(uintmax_t)now );
 	}
 
 	return 0;
