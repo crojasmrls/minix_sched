@@ -1,8 +1,8 @@
 #include <stdio.h>
+#include <stdint.h.h>
 #include <stdlib.h>
 #include <time.h>
 #include <unistd.h>
-#include <sys/time.h>
 #define cycles 1000
 
 int main(int argc, char const *argv[])
