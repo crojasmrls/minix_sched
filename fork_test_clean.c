@@ -23,7 +23,7 @@ int main(int argc, char const *argv[])
 		if (pid==0)
 		{
 			now = time(NULL);
-			printf("Procces started: pid =%d, %s \n",getpid(),asctime(localtime(&now)) );
+			//printf("Procces started: pid =%d, %s \n",getpid(),asctime(localtime(&now)) );
 			i=5;
 		}
 	}
@@ -36,12 +36,12 @@ int main(int argc, char const *argv[])
 			}
 		}
 		now = time(NULL);
-		printf("Procces finished: pid =%d, ops = %d, %s \n",getpid(),operations,asctime(localtime(&now)));
+		//printf("Procces finished: pid =%d, ops = %d, %s \n",getpid(),operations,asctime(localtime(&now)));
 	}
 	if (pid!=0)
 	{
 		now = time(NULL);
-		printf("Parent finished: pid =%d, %s \n",getpid(),asctime(localtime(&now)));
+		//printf("Parent finished: pid =%d, %s \n",getpid(),asctime(localtime(&now)));
 	}
 
 	return 0;
