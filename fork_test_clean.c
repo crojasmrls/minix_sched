@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <unistd.h>
-#define cycles 100000000000
+#define cycles 10000000000
 
 int main(int argc, char const *argv[])
 {
@@ -32,7 +32,13 @@ int main(int argc, char const *argv[])
 		operations = (rand()%11)*cycles;
 		for (int i = 0; i < operations; ++i);{
 			for (int j = 0; j < operations; ++j);{
-				a=a+a;
+				for (int k = 0; k < operations; ++k)
+				{
+					for (int l = 0; l < count; ++l)
+					{
+						a=a+0;
+					}
+				}
 			}
 		}
 		now = time(NULL);
