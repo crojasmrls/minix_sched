@@ -143,6 +143,7 @@ int do_noquantum(message *m_ptr)
 			case 62:
 				printf("Process %d consumed Quantum %d and Priority %d\n", rmp->endpoint, rmp->quantum, rmp->priority);
 				rmp->priority = MAX_USER_Q;
+				rmp->quantum = 0;
 			break;
 		}
 	}
