@@ -39,7 +39,7 @@ int main(int argc, char const *argv[])
 				for (int k = 0; k < operations; ++k)
 				{
 					d=a+0;
-					/*for (int l = 0; l < operations; ++l)
+					for (int l = 0; l < operations; ++l)
 					{
 						e=a+0;
 						for (int m = 0; m < operations; ++m)
@@ -50,9 +50,9 @@ int main(int argc, char const *argv[])
 								a=a+0;
 							}
 						}
-					}*/
-			//	}
-			//}
+					}
+				}
+			}*/
 		}
 		now = time(NULL);
 		printf("Procces finished: pid =%d, ops = %d, %s \n",getpid(),operations,asctime(localtime(&now)));
