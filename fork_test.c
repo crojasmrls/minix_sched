@@ -25,7 +25,7 @@ int main(int argc, char const *argv[])
 		{
 			now = time(NULL);
 			printf("Procces started: pid =%d, %s \n",getpid(),asctime(localtime(&now)) );
-			i=5;
+			i=10;
 		}
 	}
 	if (pid==0)
