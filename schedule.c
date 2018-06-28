@@ -423,3 +423,4 @@ static void balance_queues(struct timer *tp)
 		}
 	}
 	set_timer(&sched_timer, balance_timeout, balance_queues, 0);
+}
