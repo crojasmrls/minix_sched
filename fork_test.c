@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 #include <unistd.h>
-#define cycles 10000
-#define mult   100
+#define cycles 100000
+#define mult   1000
 
 int main(int argc, char const *argv[])
 {
