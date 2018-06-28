@@ -120,27 +120,27 @@ int do_noquantum(message *m_ptr)
 		}	*/	
 
 		switch(rmp->quantum){
-			case 5:
+			case 2:
 				printf("Process %d consumed Quantum %d and Priority %d\n", rmp->endpoint, rmp->quantum, rmp->priority);
 				if(rmp->priority < MIN_USER_Q) rmp->priority +=1;
 			break;
 
-			case 15:
+			case 6:
 				printf("Process %d consumed Quantum %d and Priority %d\n", rmp->endpoint, rmp->quantum, rmp->priority);
 				if(rmp->priority < MIN_USER_Q) rmp->priority +=1;
 			break;
 
-			case 35:
+			case 14:
 				printf("Process %d consumed Quantum %d and Priority %d\n", rmp->endpoint, rmp->quantum, rmp->priority);
 				if(rmp->priority < MIN_USER_Q) rmp->priority +=1;
 			break;
 
-			case 75:
+			case 30:
 				printf("Process %d consumed Quantum %d and Priority %d\n", rmp->endpoint, rmp->quantum, rmp->priority);
 				if(rmp->priority < MIN_USER_Q) rmp->priority +=1;
 			break;
 
-			case 155:
+			case 62:
 				printf("Process %d consumed Quantum %d and Priority %d\n", rmp->endpoint, rmp->quantum, rmp->priority);
 				rmp->priority = MAX_USER_Q;
 			break;
@@ -412,8 +412,8 @@ static void balance_queues(struct timer *tp)
 	for (proc_nr=0, rmp=schedproc; proc_nr < NR_PROCS; proc_nr++, rmp++) {
 		if (rmp->flags & IN_USE) {
 			if (rmp->priority>=MAX_USER_Q && rmp->priority<=MIN_USER_Q){
-				rmp->priority = MAX_USER_Q;
-				rmp->quantum = 0;
+				rmp->priority = rmp->priority;
+				rmp->quantum = rmp->quantum;
 				schedule_process_local(rmp);
 			}
 			else if (rmp->priority > rmp->max_priority) {
@@ -423,4 +423,3 @@ static void balance_queues(struct timer *tp)
 		}
 	}
 	set_timer(&sched_timer, balance_timeout, balance_queues, 0);
-}

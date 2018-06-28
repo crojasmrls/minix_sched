@@ -16,7 +16,7 @@ int main(int argc, char const *argv[])
 	now = time(NULL);
 	printf("Parent started: pid =%d, %s \n",getpid(),asctime(localtime(&now)) );
 
-	for (int i = 0; i < 5; ++i)
+	for (int i = 0; i < 10; ++i)
 	{
 		delay=rand()%11;
 		sleep(delay);
