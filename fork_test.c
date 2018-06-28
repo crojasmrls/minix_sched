@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <unistd.h>
-#define cycles 1000
+#define cycles 10000
 
 int main(int argc, char const *argv[])
 {
