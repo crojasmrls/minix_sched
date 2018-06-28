@@ -3,7 +3,7 @@
 #include <time.h>
 #include <unistd.h>
 #define cycles 100000
-#define mult   1000
+#define mult   10000
 
 int main(int argc, char const *argv[])
 {
