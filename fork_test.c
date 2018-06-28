@@ -18,7 +18,7 @@ int main(int argc, char const *argv[])
 
 	for (int i = 0; i < 5; ++i)
 	{
-		delay=rand()%6;
+		delay=rand()%11;
 		sleep(delay);
 		pid=fork();
 		if (pid==0)
@@ -30,7 +30,7 @@ int main(int argc, char const *argv[])
 	}
 	if (pid==0)
 	{
-		operations = (rand()%6)*cycles;
+		operations = (rand()%11)*cycles;
 		for (int i = 0; i < operations; ++i)
 		{
 			b=a+0;
