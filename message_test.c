@@ -10,7 +10,7 @@ int main(void)
 	int c=0;
 	int b=0;
 	int operations;
-	int pp[2];
+	//int pp[2];
 	//pipe(&pp[0]);
 	int pid;
 	pid=fork();
