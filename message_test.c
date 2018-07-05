@@ -11,7 +11,7 @@ int main(void)
 	int b=0;
 	int operations;
 	int pp[2];
-	pipe(&pp[0]);
+	//pipe(&pp[0]);
 	int pid;
 	pid=fork();
 	if (pid>0)
@@ -32,7 +32,8 @@ int main(void)
 			}
 			if (1)
 			{
-				n=read(pp[0], &message, sizeof(message));
+				//n=read(pp[0], &message, sizeof(message));
+				message=message +1;
 				printf("El mensaje es: %d\n", message);
 			}
 		}
@@ -44,7 +45,8 @@ int main(void)
 			close(pp[0]);
 			printf("Ingrese un mensaje:\n");
 			scanf ("%d",&message);
-			n=write(pp[1], &message, sizeof(message));
+			printf("Mensaje ingresado: %d\n", message);
+			//n=write(pp[1], &message, sizeof(message));
 			for (int i = 0; i < operations; ++i)
 			{
 				b=a+0;
