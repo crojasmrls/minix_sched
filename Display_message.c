@@ -23,7 +23,7 @@ int main(int argc, char const *argv[])
 		}
 		if (1)
 		{
-			printf("Hello from program 1");
+			printf("Hello from program 1\n");
 		}
 	}
 	return 0;

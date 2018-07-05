@@ -9,9 +9,9 @@ int main(int argc, char const *argv[])
 {
 	char message [80];
 	while(1){
-		printf("Ingrese un mensaje:");
+		printf("Ingrese un mensaje:\n");
 		scanf ("%79s",message);  
-	 	printf ("El mensaje es: %s", message);
+	 	printf ("El mensaje es: %s\n", message);
 	}
 	return 0;
 }
