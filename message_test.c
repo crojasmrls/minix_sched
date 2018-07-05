@@ -13,7 +13,7 @@ int main(void)
 	int pp[2];
 	pipe(&pp[0]);
 	int pid;
-	pid=fork;
+	pid=fork();
 	if (pid>0)
 	{
 		int n;
