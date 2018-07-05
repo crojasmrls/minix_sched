@@ -16,10 +16,11 @@ int main(void)
 	pid=fork();
 	if (pid>0)
 	{
-		int n;
-		int message;
+
 
 		while(1){
+			int n;
+			int message;
 			operations = cycles;
 			for (int i = 0; i < operations; ++i)
 			{
@@ -39,6 +40,7 @@ int main(void)
 		while (1){
 			int n;
 			int message=0;
+			operations = cycles;
 			close(pp[0]);
 			printf("Ingrese un mensaje:\n");
 			scanf ("%d",&message);
