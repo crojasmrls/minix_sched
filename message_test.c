@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/wait.h>
-#define cycles 100000
+#define cycles 1000000
 #define mult   1000
 
 int main(void)
