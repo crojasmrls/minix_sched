@@ -9,8 +9,9 @@ int main(int argc, char const *argv[])
 {
 	int a=0;	
 	int b=0;
+	int operations;
 	while(1){
-				operations = cycles;
+		operations = cycles;
 		for (int i = 0; i < operations; ++i)
 		{
 			b=a+0;
