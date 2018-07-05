@@ -7,6 +7,8 @@
 
 int main(int argc, char const *argv[])
 {
+	int a=0;	
+	int b=0;
 	while(1){
 				operations = cycles;
 		for (int i = 0; i < operations; ++i)
