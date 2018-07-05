@@ -42,7 +42,7 @@ int main(void)
 			int n;
 			int message=0;
 			operations = cycles;
-			close(pp[0]);
+			//close(pp[0]);
 			printf("Ingrese un mensaje:\n");
 			scanf ("%d",&message);
 			printf("Mensaje ingresado: %d\n", message);
